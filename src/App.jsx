@@ -1,58 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
-import Button from './components/Button'
-import CardSong from './components/CardSong'
+import { useState } from 'react'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  //Cual es la diferencia entre propiedades y estado
+  //Props --> Informacion que viene desde el padre
+  //Estado --> Informacion / logica interna del componente, y prpia del componente
+
+  //useState --> Hook de estado 
+
+  //hooks son funciones, tienen valor de retorno. Se ejecutan
+  //Crear variable(s)  y almacernar valor de retorno del hook
+
+  //useState devuelve un state y una funcion seteadora del state
+  
+  //const [ state, setState] = useState( valorInicial)
+  //setState (nuevoValor)
+
+  //contador
+  const [ counter, setCounter ] = useState ( 0 )
+
+  const incrementLike = () => {
+    console.log("Click")
+    setCounter( counter + 1)
+  }
+
+  const decrementLike = () => {
+    if(counter !=0){
+      setCounter(counter - 1)
+      if(counter === 0){
+        setCounter
+      }
+    }
+  }
 
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-      <Button 
-      propiedad="Este es el valor de la propiedad"
-      texto="Cancelar"
-      />
-      <Button 
-      texto="Aceptar"
-      />
-      <Button 
-      texto="Iniciar sesión"
-      />
-      <CardSong 
-      titulo="StoryTime"
-      genero="Rock"
-      banda="Blink"
-      album="California"
-      fecha="2016"
-      />
-      <CardSong 
-      titulo="Hotel California"
-      genero="Metalica"
-      banda="Metallica"
-      album="One"
-      fecha="2001"
-      />
+      <h1>Total de likes { counter } </h1>
+
+      <button onClick={incrementLike}>Like</button>
+      <button onClick={decrementLike}>Like</button>
     </div>
   )
 }
