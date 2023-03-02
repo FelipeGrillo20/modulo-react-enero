@@ -1,46 +1,43 @@
 import './App.css'
+import FortuneCookie from './components/FortuneCookie'
+import phrases from './data/phrases.json'
 import { useState } from 'react'
+import Imagen1 from './assets/backgrounds/fondo1.png' 
+import Imagen2 from './assets/backgrounds/fondo2.png' 
+import Imagen3 from './assets/backgrounds/fondo3.png' 
+import Imagen4 from './assets/backgrounds/fondo4.png' 
+
 
 function App() {
-
-  //Cual es la diferencia entre propiedades y estado
-  //Props --> Informacion que viene desde el padre
-  //Estado --> Informacion / logica interna del componente, y prpia del componente
-
-  //useState --> Hook de estado 
-
-  //hooks son funciones, tienen valor de retorno. Se ejecutan
-  //Crear variable(s)  y almacernar valor de retorno del hook
-
-  //useState devuelve un state y una funcion seteadora del state
   
-  //const [ state, setState] = useState( valorInicial)
-  //setState (nuevoValor)
+  
+  const [ index, setIndex ] = useState ( 0 )
+  const [ indexFondo, setFondo ] = useState ( 0 )
 
-  //contador
-  const [ counter, setCounter ] = useState ( 0 )
+  const imagenes = [Imagen1,Imagen2,Imagen3,Imagen4]
 
-  const incrementLike = () => {
-    console.log("Click")
-    setCounter( counter + 1)
+  const changeUser = () => {
+    console.log("Cambio de usuario")
+    setIndex(Math.floor(Math.random() * phrases.length))
+    setFondo(Math.floor(Math.random() * imagenes.length))
   }
 
-  const decrementLike = () => {
-    if(counter !=0){
-      setCounter(counter - 1)
-      if(counter === 0){
-        setCounter
-      }
-    }
-  }
+
 
   return (
-    <div className="App">
-      <h1>Total de likes { counter } </h1>
+    <div className="App" style={ {backgroundImage:'url('+imagenes[indexFondo]+')' }} >
 
-      <button onClick={incrementLike}>Like</button>
-      <button onClick={decrementLike}>Like</button>
+      <FortuneCookie
+      userData= { phrases[index] }
+
+      />
+
+      <button onClick= { changeUser }>
+        <p>Ver Otro</p>
+      </button>
+     
     </div>
+
   )
 }
 

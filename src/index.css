@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.App {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.user-cookie{
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    width: 600px;
+    height: 200px;
+    padding: 30px;
+    border-radius: 10px;
+    background: #FCF3CF;
+    text-align: center;
+}
+
+
+.user-cookie ul{
+    list-style: none;
+    padding: 0;
+}
+
+.user-cookie ul li {
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+button {
+    background:rgba(0, 0, 0, 0.3);
+    border: none;
+    width: 100px;
+    height: 40px;
+    cursor: pointer;
+    color: white;
+    margin-top: 20px;
+    border-radius: 20%;
+}
+
+.titulo__principal{
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.parrafo__autor{
+    padding: 70px;
+    text-align: right;
+}
