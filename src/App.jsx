@@ -1,5 +1,6 @@
 import './App.css'
 import FortuneCookie from './components/FortuneCookie'
+import AutorCookie from './components/AutorCookie'
 import phrases from './data/phrases.json'
 import { useState } from 'react'
 import Imagen1 from './assets/backgrounds/fondo1.png' 
@@ -28,6 +29,11 @@ function App() {
     <div className="App" style={ {backgroundImage:'url('+imagenes[indexFondo]+')' }} >
 
       <FortuneCookie
+      userData= { phrases[index] }
+
+      />
+
+      <AutorCookie
       userData= { phrases[index] }
 
       />

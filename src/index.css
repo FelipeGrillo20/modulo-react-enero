@@ -23,7 +23,7 @@ body{
 .user-cookie{
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
     width: 600px;
-    height: 200px;
+    height: 150px;
     padding: 30px;
     border-radius: 10px;
     background: #FCF3CF;
@@ -58,6 +58,14 @@ button {
 }
 
 .parrafo__autor{
-    padding: 70px;
-    text-align: right;
+    background-color: #FAD7A0;
+    padding: 10px;
+    text-align: center;
+    width: 600px;
+    border-radius: 50px;
+}
+
+.parrafo__autor ul{
+    list-style: none;
+    padding: 0;
 }

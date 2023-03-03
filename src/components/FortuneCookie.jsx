@@ -12,7 +12,6 @@ const FortuneCookie = ( {userData} ) => {
                     { userData.phrase }
                     </li>
                 </ul>
-                <p className="parrafo__autor"> { userData.author } </p>
             </div>
         </div>
 
